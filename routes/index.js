@@ -14,6 +14,7 @@ function requiresLogin(req, res, next) {
     }
 }
 
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
     if(req.session.userId){
@@ -23,6 +24,15 @@ router.get('/', function(req, res, next) {
     }
 
 });
+
+router.get('/add', function(req, res, next) {
+
+        res.render('post', { title: 'Express' });
+
+
+});
+
+
 /* GET home page. */
 router.post('/', function(req, res, next) {
     if (req.body.email && req.body.password) {
@@ -57,6 +67,10 @@ router.get('/signup', function(req, res, next) {
 
     res.render('signup');
 });
+
+
+
+
 router.post('/signup', function(req, res, next) {
     if (req.body.email &&
         req.body.username &&

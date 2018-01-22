@@ -5,11 +5,11 @@ block content
     .wrapper
         .container
             h1 Welcome
-            form.form(action='/', method='post')
-                input(type='text',name='email', placeholder='Username')
-                input(type='password',name='password', placeholder='Password')
-                button#logisn-button(type='submit') Login
-                a(href='/signup',class="signup") Register
+            form.form(action='/add', method='post')
+                input(type='text',name='blockData', placeholder='Data')
+
+                button#logisn-button(type='submit') Add
+
         ul.bg-bubbles
             li
             li

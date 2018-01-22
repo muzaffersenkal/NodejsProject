@@ -100,7 +100,7 @@ form input:focus {
   width: 300px;
   color: #53e3a6;
 }
-form button {
+form button, .signup {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -115,9 +115,14 @@ form button {
   font-size: 18px;
   -webkit-transition-duration: 0.25s;
   transition-duration: 0.25s;
+  margin:10px 40px 0px 40px;
 }
-form button:hover {
+form button:hover,signup:hover {
   background-color: #f5f7f9;
+}
+.signup {
+  display:inline-block;
+  text-decoration:none;
 }
 .bg-bubbles {
   position: absolute;
