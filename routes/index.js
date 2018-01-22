@@ -16,7 +16,12 @@ function requiresLogin(req, res, next) {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+    if(req.session.userId){
+        res.render('index', { title: 'Express' });
+    }else{
+        res.render('login', { title: 'Express' });
+    }
+
 });
 /* GET home page. */
 router.post('/', function(req, res, next) {
@@ -28,7 +33,7 @@ router.post('/', function(req, res, next) {
                 return next(err);
             } else {
                 req.session.userId = user._id;
-                return res.redirect('/profile');
+                return res.redirect('/');
             }
         });
     }
@@ -69,7 +74,7 @@ router.post('/signup', function(req, res, next) {
             if (err) {
                 return next(err)
             } else {
-                return res.redirect('/profile');
+                return res.redirect('/');
             }
         });
     }
