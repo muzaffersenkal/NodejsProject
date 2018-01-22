@@ -4,13 +4,22 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var mongoose = require('mongoose');
 var db = require('./models/db');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-
+const  session = require('express-session');
+const  MongoStore = require('connect-mongo')(session);
 var app = express();
+
+app.use(session({
+    secret: 'work hard',
+    resave: true,
+    saveUninitialized: false,
+    store: new MongoStore({mongooseConnection: mongoose.connection })
+}));
+
 
 
 
@@ -32,6 +41,7 @@ app.use('/users', users);
 
 
 var User = require('./models/users');
+
 
 
 
