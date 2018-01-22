@@ -1,5 +1,22 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .wrapper
+    .container
+      h1 Welcome
+      form.form(action='/', method='post')
+        input(type='text', placeholder='Username')
+        input(type='password', placeholder='Password')
+        button#login-button(type='submit') Login
+    ul.bg-bubbles
+      li
+      li
+      li
+      li
+      li
+      li
+      li
+      li
+      li
+      li
+

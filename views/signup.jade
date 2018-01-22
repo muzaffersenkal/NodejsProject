@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    .wrapper
+        .container
+            h1 Signup Now
+            form.form(action='/signup', method='post')
+                input(type='text',name='email', placeholder='Email')
+                input(type='text',name='username', placeholder='Username')
+                input(type='password',name='password', placeholder='Password')
+                input(type='passwordConf', name='passwordConf',placeholder='Password Confirmation')
+                button#logsin-button(type='submit') Signup
+        ul.bg-bubbles
+            li
+            li
+            li
+            li
+            li
+            li
+            li
+            li
+            li
+            li
+
